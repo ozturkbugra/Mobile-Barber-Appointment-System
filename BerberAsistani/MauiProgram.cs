@@ -19,6 +19,9 @@ namespace BerberAsistani
     		builder.Logging.AddDebug();
 #endif
 
+            builder.Services.AddSingleton<Services.RandevuService>();
+            builder.Services.AddSingleton<MainPage>(); // Ana sayfayı da ekle
+
             return builder.Build();
         }
     }
