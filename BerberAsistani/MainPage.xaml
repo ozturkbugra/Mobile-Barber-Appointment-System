@@ -7,12 +7,32 @@
 
     <Grid RowDefinitions="Auto, Auto, *">
 
-        <Frame Grid.Row="0" Margin="10" Padding="10" BackgroundColor="White" CornerRadius="10" BorderColor="LightGray">
-            <DatePicker Date="{Binding SecilenTarih}" 
-                        Format="dd MMMM yyyy dddd" 
-                        TextColor="#2196F3" 
-                        HorizontalOptions="Center"
-                        FontAttributes="Bold"/>
+        <Frame Grid.Row="0" Margin="10" Padding="5" BackgroundColor="White" CornerRadius="10" BorderColor="LightGray">
+            <Grid ColumnDefinitions="Auto, *, Auto">
+
+                <Button Grid.Column="0" 
+                Text="&#x25C0;" 
+                FontSize="20"
+                TextColor="#2196F3"
+                BackgroundColor="Transparent"
+                Command="{Binding GunDegistirCommand}"
+                CommandParameter="{x:Int32 -1}"/>
+                <DatePicker Grid.Column="1"
+                    Date="{Binding SecilenTarih}" 
+                    Format="dd MMMM dddd" 
+                    TextColor="#2196F3" 
+                    HorizontalOptions="Center"
+                    FontAttributes="Bold"/>
+
+                <Button Grid.Column="2" 
+                Text="&#x25B6;" 
+                FontSize="20"
+                TextColor="#2196F3"
+                BackgroundColor="Transparent"
+                Command="{Binding GunDegistirCommand}"
+                CommandParameter="{x:Int32 1}"/>
+
+            </Grid>
         </Frame>
 
         <Border Grid.Row="1" x:Name="PnlYeniKayit" 
